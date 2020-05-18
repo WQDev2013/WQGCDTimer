@@ -61,15 +61,21 @@ dispatch_semaphore_t semaphore_;
 
 + (NSString *)execTask:(id)target selector:(SEL)selector start:(NSTimeInterval)start interval:(NSTimeInterval)interval repeats:(BOOL)repeats async:(BOOL)async
 {
+    NSLog(@"execTask:(id)target selector:(SEL)selector");
     if (!target || !selector) return nil;
-    
+//    NSLog(@"===%@,%@",target,selector);
+//    NSLog(@"条件:%d",(!target || !selector));
     return [self execTask:^{
-        if ([target respondsToSelector:selector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [target performSelector:selector];
-#pragma clang diagnostic pop
+        if (target != nil && selector != nil){
+            //[target performSelector:selector];
+            if ([target respondsToSelector:selector]) {
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [target performSelector:selector];
+    #pragma clang diagnostic pop
+            }
         }
+        
     } start:start interval:interval repeats:repeats async:async];
 }
 

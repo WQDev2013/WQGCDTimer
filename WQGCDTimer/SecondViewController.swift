@@ -17,6 +17,9 @@ class SecondViewController: UIViewController {
         print("SecondViewController deinit")
 //        self.timer.invalidate()
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        WQGCDTimer.cancelTask(self.task)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +31,7 @@ class SecondViewController: UIViewController {
         self.view.addSubview(btn)
         
         let target = WQProxy(target: self)
-        self.task = WQGCDTimer.execTask(self, selector: #selector(dotask), start: 0, interval: 4.0, repeats: true, async: true)
+        self.task = WQGCDTimer.execTask(target, selector: #selector(dotask), start: 1.00, interval: 4.0, repeats: true, async: true)
 //        self.task = WQGCDTimer.execTask(self, selector: #selector(dotask), start: 0, interval: 1.0, repeats: true, async: true)
         
 //        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: target, selector: #selector(dotask), userInfo: nil, repeats: true)

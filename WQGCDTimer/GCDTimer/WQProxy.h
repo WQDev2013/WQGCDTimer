@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WQProxy : NSObject
+@interface WQProxy : NSProxy
 
 + (instancetype)proxyWithTarget:(id)target;
 @property (weak, nonatomic) id target;
