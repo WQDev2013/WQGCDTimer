@@ -4,3 +4,4 @@
 
 #import "WQGCDTimer.h"
 #import "WQProxy.h"
+#import "WQCustomView.h"

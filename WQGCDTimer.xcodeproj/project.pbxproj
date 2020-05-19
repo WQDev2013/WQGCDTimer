@@ -16,6 +16,7 @@
 		A010F6782470C95300A70C6F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010F6772470C95300A70C6F /* SecondViewController.swift */; };
 		A010F67F2470CACE00A70C6F /* WQGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A010F67E2470CACE00A70C6F /* WQGCDTimer.m */; };
 		A010F6822470CE7E00A70C6F /* WQProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A010F6812470CE7E00A70C6F /* WQProxy.m */; };
+		A06B0BF62473D94C00FC6863 /* WQCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06B0BF52473D94C00FC6863 /* WQCustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		A010F67E2470CACE00A70C6F /* WQGCDTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQGCDTimer.m; sourceTree = "<group>"; };
 		A010F6802470CE7E00A70C6F /* WQProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQProxy.h; sourceTree = "<group>"; };
 		A010F6812470CE7E00A70C6F /* WQProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQProxy.m; sourceTree = "<group>"; };
+		A06B0BF42473D94C00FC6863 /* WQCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCustomView.h; sourceTree = "<group>"; };
+		A06B0BF52473D94C00FC6863 /* WQCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 				A010F6652470C94300A70C6F /* SceneDelegate.swift */,
 				A010F6672470C94300A70C6F /* ViewController.swift */,
 				A010F6772470C95300A70C6F /* SecondViewController.swift */,
+				A06B0BF02473D77E00FC6863 /* CustomVIew(自定义组件) */,
 				A010F6792470CA5100A70C6F /* GCDTimer */,
 				A010F6692470C94300A70C6F /* Main.storyboard */,
 				A010F66C2470C94300A70C6F /* Assets.xcassets */,
@@ -88,6 +92,15 @@
 				A010F67C2470CACE00A70C6F /* WQGCDTimer-Bridging-Header.h */,
 			);
 			path = GCDTimer;
+			sourceTree = "<group>";
+		};
+		A06B0BF02473D77E00FC6863 /* CustomVIew(自定义组件) */ = {
+			isa = PBXGroup;
+			children = (
+				A06B0BF42473D94C00FC6863 /* WQCustomView.h */,
+				A06B0BF52473D94C00FC6863 /* WQCustomView.m */,
+			);
+			path = "CustomVIew(自定义组件)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +177,7 @@
 			files = (
 				A010F6822470CE7E00A70C6F /* WQProxy.m in Sources */,
 				A010F6782470C95300A70C6F /* SecondViewController.swift in Sources */,
+				A06B0BF62473D94C00FC6863 /* WQCustomView.m in Sources */,
 				A010F6682470C94300A70C6F /* ViewController.swift in Sources */,
 				A010F67F2470CACE00A70C6F /* WQGCDTimer.m in Sources */,
 				A010F6642470C94300A70C6F /* AppDelegate.swift in Sources */,

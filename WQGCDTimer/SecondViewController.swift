@@ -13,6 +13,8 @@ class SecondViewController: UIViewController {
     var task: String!
     
     var timer: Timer!
+    
+    var myView:WQCustomView!
     deinit {
         print("SecondViewController deinit")
 //        self.timer.invalidate()
@@ -31,12 +33,28 @@ class SecondViewController: UIViewController {
         self.view.addSubview(btn)
         
         let target = WQProxy(target: self)
-        self.task = WQGCDTimer.execTask(target, selector: #selector(dotask), start: 1.00, interval: 4.0, repeats: true, async: true)
+        self.task = WQGCDTimer.execTask(target, selector: #selector(dotask), start: 1.00, interval: 1.0, repeats: true, async: true)
 //        self.task = WQGCDTimer.execTask(self, selector: #selector(dotask), start: 0, interval: 1.0, repeats: true, async: true)
         
 //        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: target, selector: #selector(dotask), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
+        
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        testAddSel()
+    }
+    @objc func testAddSel(){
+        let view1 = WQCustomView()
+        view1.frame = CGRect(x: 10, y: 100, width: 60, height: 30)
+        view1.backgroundColor = .gray
+        view.addSubview(view1)
+        myView = view1
+        view1.setPushVCSelector(WQProxy(target: self), selector: #selector(pushVC))
+    }
+    @objc func pushVC(){
+        print("====跳转方法执行")
+    }
+    
     @objc func dotask() {
         print("dotask \(Thread.current)")
     }
